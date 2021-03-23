@@ -35,7 +35,7 @@ class MyAppState extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     var questions=[
-      "You are here to ?? :V lolllllll",
+      "You are here to ?? :booooo",
       "Having excess food to donate?"];
 
     return MaterialApp(
