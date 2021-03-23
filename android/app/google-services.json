@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "187722353083",
+    "firebase_url": "https://hunger-f1fd6-default-rtdb.firebaseio.com",
+    "project_id": "hunger-f1fd6",
+    "storage_bucket": "hunger-f1fd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187722353083:android:4bdb554236bf292aca9c9e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187722353083-pf2jiq7vfe6g817j8dqsbjruclh9sud5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWTJN_Rd8IAGX7t2cIjIJ4JT7XFpnFPjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187722353083-pf2jiq7vfe6g817j8dqsbjruclh9sud5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
