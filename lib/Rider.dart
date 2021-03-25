@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/database.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_app/Orderlist.dart';
+import 'package:flutter_app/Order.dart';
 
 class Rider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
+    return StreamProvider<List<Order>>.value(
       value: DatabaseService().newOrder,
       initialData: null,
       child: Scaffold(
@@ -16,7 +16,7 @@ class Rider extends StatelessWidget {
           backgroundColor: Colors.black,
 
         ),
-        body: Orderlist(),
+        body: Orderlist(), //where we show list of order
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           items: const <BottomNavigationBarItem>[BottomNavigationBarItem(icon:

@@ -62,7 +62,7 @@ class Restaurant extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {
                           DatabaseService().updateDatabase(paxController.text,describeController.text);
-                          Navigator.of(context).pop(true);
+                          Navigator.of(context).pop(true);   //to close the pop up form
                         },
                       autofocus: true,
                         child: Text("Submit"),
