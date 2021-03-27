@@ -19,15 +19,17 @@ class OrderCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(order.pax + ' pax'),
-              Text(order.address)
+              Text(order.address),
             ],
           ),
           leading: IconButton(
             icon: Icon(Icons.check_circle_rounded),
             color: Colors.green,
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=> MapTracker())
+              ;
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> MapTracker(providerAddress: order.address))
               );
             },
           ),
@@ -36,3 +38,8 @@ class OrderCard extends StatelessWidget {
     );
   }
 }
+
+
+
+
+

@@ -22,7 +22,6 @@ class _OrderListViewState extends State<Orderlist> {
       itemBuilder: (BuildContext context, int index) {
         return OrderCard(order: foodlist[index]);
       },
-
     );
   }
 }

@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class MapTracker extends StatefulWidget{
-  MapTracker() : super();
+  final String providerAddress;
+
+  MapTracker({this.providerAddress}) : super();
 
   final String title = "Maps Tracker";
 
   @override
-  MapTrackerState createState() => MapTrackerState();
+  MapTrackerState createState() => MapTrackerState(providerAddress);
 }
 
 
 class MapTrackerState extends State<MapTracker>{
+  String mapProviderAddress;
+
+  MapTrackerState(String initMapProviderAddress){
+    mapProviderAddress = initMapProviderAddress;
+  }
 
   Completer<GoogleMapController> _controller = Completer();
-  static const LatLng _center = const LatLng(42.131, -122.2342);
+  static const LatLng _center = const LatLng(5.4145728, 100.3297271);
   final Set<Marker> _markers = {};
   LatLng _lastMapPosition = _center;
   MapType _currentMapType = MapType.normal;
+
 
   _onMapCreated(GoogleMapController controller){
     _controller.complete(controller);
@@ -83,12 +93,13 @@ class MapTrackerState extends State<MapTracker>{
                 onMapCreated:  _onMapCreated,
                 initialCameraPosition:  CameraPosition(
                   target: _center,
-                  zoom: 11.0,
+                  zoom: 15.0,
                 ),
                 mapType: _currentMapType,
                 markers: _markers,
                 onCameraMove:  _onCameraMove,
               ),
+
 
               Padding(
                   padding: EdgeInsets.all(16.0),
@@ -103,6 +114,7 @@ class MapTrackerState extends State<MapTracker>{
                       )
                   )
               ),
+
 
               Padding(
                 padding: EdgeInsets.only(top: 450),
@@ -174,18 +186,19 @@ class MapTrackerState extends State<MapTracker>{
                               Row(
                                 children: [
                                   Text(
-                                    'Galaxy condominiums',
+                                    'home',
                                     style: TextStyle(
+                                      fontWeight: FontWeight.bold,
                                       fontSize: 20.0,
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
 
                               Row(
                                 children: [
                                   Text(
-                                    'Restaurant Shangrila',
+                                    mapProviderAddress,
                                     style: TextStyle(
                                       fontSize: 20.0,
                                     ),
@@ -196,7 +209,7 @@ class MapTrackerState extends State<MapTracker>{
                               Row(
                                 children: [
                                   Text(
-                                    'Blueberry flats',
+                                    "Grace's soup kitchen",
                                     style: TextStyle(
                                       fontSize: 20.0,
                                     ),

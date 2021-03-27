@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_app/Orderlist.dart';
 import 'package:flutter_app/Order.dart';
 
+
 class Rider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class Rider extends StatelessWidget {
               Icon(Icons.more_horiz_outlined),
                   label: 'Menu'
               )],
-            selectedItemColor:Colors.red,
+            selectedItemColor:Colors.grey,
           ),
         ),
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/database.dart';
-import 'package:google_pay/google_pay.dart';
 import 'package:flutter_app/Transaction.dart';
 
 class Donation extends StatefulWidget {

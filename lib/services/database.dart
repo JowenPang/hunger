@@ -23,6 +23,7 @@ class DatabaseService{
     return;
   }
 
+
   List<Order> _ordersFromSnapshot(QuerySnapshot snapshot){
     //previously just a snapshot of the whole list , everytime we need one order , it will need to loop the whole list
     //now mapping it to List of each Order object , so that we can easily add and remove order
@@ -41,5 +42,4 @@ class DatabaseService{
   Stream<List<Order>> get newOrder{
     return foodDonation.snapshots().map(_ordersFromSnapshot);
   }
-
 }
