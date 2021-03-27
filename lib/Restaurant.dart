@@ -3,7 +3,6 @@ import 'package:flutter_app/services/database.dart';
 import './question.dart';
 
 
-
 class Restaurant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -74,9 +73,7 @@ class Restaurant extends StatelessWidget {
                         },
                         child: Text("Cancel"))
                   ],
-
           );
-
         }
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter_app/MapTracker.dart';
 import 'package:flutter_app/Orderlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Order.dart';
@@ -19,8 +20,10 @@ class OrderCard extends StatelessWidget {
             icon: Icon(Icons.check_circle_rounded),
             color: Colors.green,
             onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=> MapTracker())
+              );
             },
-
           ),
         )
       )

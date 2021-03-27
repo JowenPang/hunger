@@ -16,7 +16,9 @@ class Rider extends StatelessWidget {
           backgroundColor: Colors.black,
 
         ),
+
         body: Orderlist(), //where we show list of order
+
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           items: const <BottomNavigationBarItem>[BottomNavigationBarItem(icon:
