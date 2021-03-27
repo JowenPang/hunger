@@ -4,11 +4,21 @@ import 'package:flutter_app/Order.dart';
 class DatabaseService{
 
   final CollectionReference foodDonation= Firestore.instance.collection('food');
+  final CollectionReference donation= Firestore.instance.collection('donation');
 
-  Future updateDatabase(String pax,String description) async{
+
+  Future updateDatabase(String pax,String description,String address) async{
     foodDonation.add({
       'pax': pax,
-      'description': description
+      'description': description,
+      'address': address,
+    });
+    return;
+  }
+
+  Future updateDonationDatabase(String amount) async{
+    donation.add({
+      'donation': donation
     });
     return;
   }
@@ -20,7 +30,8 @@ class DatabaseService{
 
       return Order(  //everytime will cycle through snapshot.document's doc then assign the data in doc to pax and description
           pax : doc.data['pax'] ?? '',
-          description : doc.data['description'] ?? ''
+          description : doc.data['description'] ?? '',
+          address : doc.data['address'] ?? ''
       );     //?? is when it does not exist then it will replace with null
     }).toList();   //return  a list of orders
   }

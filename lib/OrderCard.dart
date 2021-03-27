@@ -15,7 +15,13 @@ class OrderCard extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(20,6,20,0),
         child: ListTile(
           title: Text(order.description ),
-          subtitle: Text(order.pax + ' pax'),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(order.pax + ' pax'),
+              Text(order.address)
+            ],
+          ),
           leading: IconButton(
             icon: Icon(Icons.check_circle_rounded),
             color: Colors.green,

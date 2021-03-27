@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/services/database.dart';
 import 'package:google_pay/google_pay.dart';
-import 'Transaction.dart';
+import 'package:flutter_app/Transaction.dart';
 
 class Donation extends StatefulWidget {
   @override
@@ -141,6 +142,7 @@ class _DonationState extends State<Donation> {
                       ),
                           child: Text('Confirm amount'),
                         onPressed: () {
+                        DatabaseService().updateDonationDatabase(_amountController.text);
                         setState(() {
                           if (_amountController.text.isEmpty){
                             _validateAmount = true;

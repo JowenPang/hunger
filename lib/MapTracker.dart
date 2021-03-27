@@ -104,119 +104,121 @@ class MapTrackerState extends State<MapTracker>{
                   )
               ),
 
-              Container(
-                  margin: EdgeInsets.fromLTRB(0,450,0,0),
-                  color: Colors.teal[700],
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget> [
+              Padding(
+                padding: EdgeInsets.only(top: 450),
+                child: Container(
+                    color: Colors.teal[700],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget> [
 
-                      Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget> [
+                        Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget> [
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Home',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    'Home',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Stop 1',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    'Stop 1',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Stop 2',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    'Stop 2',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Est. Time',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    'Est. Time',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ]
-                      ),
+                                ],
+                              ),
+                            ]
+                        ),
 
 
-                      Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget> [
+                        Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget> [
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Galaxy condominiums',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    'Galaxy condominiums',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  )
+                                ],
+                              ),
+
+                              Row(
+                                children: [
+                                  Text(
+                                    'Restaurant Shangrila',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                )
-                              ],
-                            ),
+                                ],
+                              ),
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Restaurant Shangrila',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    'Blueberry flats',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Blueberry flats',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
+                              Row(
+                                children: [
+                                  Text(
+                                    '23 mins',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-
-                            Row(
-                              children: [
-                                Text(
-                                  '23 mins',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ]
-                      ),
-                    ],
-                  )
+                                ],
+                              ),
+                            ]
+                        ),
+                      ],
+                    )
+                ),
               )
             ]
         ),

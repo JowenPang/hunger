@@ -33,6 +33,7 @@ class Restaurant extends StatelessWidget {
   newForm(BuildContext context) {
     TextEditingController paxController = TextEditingController();
     TextEditingController describeController = TextEditingController();
+    TextEditingController addressController = TextEditingController();
 
     return showDialog(
         context: context,
@@ -58,11 +59,17 @@ class Restaurant extends StatelessWidget {
                   ),
                   controller: describeController,
                 ),
+              TextFormField(
+                decoration: InputDecoration(
+                    labelText: "Address"
+                ),
+                controller: addressController,
+              ),
               ]),
                actions:<Widget>[
                     ElevatedButton(
                         onPressed: () {
-                          DatabaseService().updateDatabase(paxController.text,describeController.text);
+                          DatabaseService().updateDatabase(paxController.text,describeController.text,addressController.text);
                           Navigator.of(context).pop(true);   //to close the pop up form
                         },
                       autofocus: true,

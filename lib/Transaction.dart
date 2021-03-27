@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'Payment.dart';
-import 'Donation.dart';
 
 class Transaction extends StatelessWidget {
   @override
