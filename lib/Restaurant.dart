@@ -6,23 +6,25 @@ import './question.dart';
 class Restaurant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(centerTitle: true,
-        title: Text("Restaurant Page"),
-        backgroundColor: Colors.black,
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.search),
-              color: Colors.white,
-              onPressed: () {}),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(centerTitle: true,
+          title: Text("Restaurant Page"),
+          backgroundColor: Colors.blue,
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.search),
+                color: Colors.white,
+                onPressed: () {}),
+          ],
+        ),
+        body: Column(children: [Question("having excess food to donate?"),
+          IconButton(icon: Icon(Icons.add_circle_outline_rounded),
+              iconSize: 50,
+              color: Colors.red,
+              hoverColor: Colors.red,
+              onPressed: () => newForm(context)),
         ],
-      ),
-      body: Column(children: [Question("having excess food to donate?"),
-        IconButton(icon: Icon(Icons.add_circle_outline_rounded),
-            iconSize: 50,
-            color: Colors.red,
-            hoverColor: Colors.red,
-            onPressed: () => newForm(context)),
-      ],
+        ),
       ),
     );
   }

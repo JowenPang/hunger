@@ -10,31 +10,33 @@ class Rider extends StatelessWidget {
     return StreamProvider<List<Order>>.value(
       value: DatabaseService().newOrder,
       initialData: null,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Rider page"),
-          backgroundColor: Colors.black,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("Rider page"),
+            backgroundColor: Colors.green,
 
-        ),
-
-        body: Orderlist(), //where we show list of order
-
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          items: const <BottomNavigationBarItem>[BottomNavigationBarItem(icon:
-          Icon(Icons.home_rounded),
-              backgroundColor: Colors.white,
-              label: 'Home'
           ),
-            BottomNavigationBarItem(icon:
-            Icon(Icons.search),
-                label: 'Search'
+
+          body: Orderlist(), //where we show list of order
+
+          bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Colors.white,
+            items: const <BottomNavigationBarItem>[BottomNavigationBarItem(icon:
+            Icon(Icons.home_rounded),
+                backgroundColor: Colors.white,
+                label: 'Home'
             ),
-            BottomNavigationBarItem(icon:
-            Icon(Icons.more_horiz_outlined),
-                label: 'Menu'
-            )],
-          selectedItemColor:Colors.red,
+              BottomNavigationBarItem(icon:
+              Icon(Icons.search),
+                  label: 'Search'
+              ),
+              BottomNavigationBarItem(icon:
+              Icon(Icons.more_horiz_outlined),
+                  label: 'Menu'
+              )],
+            selectedItemColor:Colors.red,
+          ),
         ),
       ),
     );

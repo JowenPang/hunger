@@ -34,6 +34,8 @@ dependencies:
   provider: ^5.0.0
   google_pay: ^0.0.1
   google_maps_flutter: ^0.5.11
+  flutter_credit_card: ^2.0.0
+  font_awesome_flutter: ^8.8.1
 
 
 
