@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'FPX.dart';
+import 'GooglePay.dart';
 import 'Payment.dart';
 
 class Transaction extends StatelessWidget {
@@ -55,7 +57,7 @@ class Transaction extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {
                               Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=> Payment()));
+                                MaterialPageRoute(builder: (context)=> GooglePay()));
                             } ,
                             child: RichText(
                                 text: TextSpan(
@@ -74,7 +76,7 @@ class Transaction extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {
                               Navigator.push(context,
-                                  MaterialPageRoute(builder: (context)=> Payment()));
+                                  MaterialPageRoute(builder: (context)=> FPX()));
                             } ,
                             child: RichText(
                                 text: TextSpan(
