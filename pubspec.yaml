@@ -36,6 +36,7 @@ dependencies:
   google_maps_flutter: ^0.5.11
   flutter_credit_card: ^2.0.0
   font_awesome_flutter: ^8.8.1
+  geocoding: ^1.0.5
 
 
 
