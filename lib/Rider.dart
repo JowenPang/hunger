@@ -16,15 +16,22 @@ class Rider extends StatelessWidget {
           appBar: AppBar(
             title: Text("Rider page"),
             backgroundColor: Colors.green,
-
+            actions: <Widget>[
+              ElevatedButton(
+                child: Text("Clear all"),
+                  onPressed: () {
+                    DatabaseService().clearAllData();
+                  }),
+            ],
           ),
 
           body: Orderlist(), //where we show list of order
 
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Colors.white,
-            items: const <BottomNavigationBarItem>[BottomNavigationBarItem(icon:
-            Icon(Icons.home_rounded),
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home_rounded),
                 backgroundColor: Colors.white,
                 label: 'Home'
             ),

@@ -31,6 +31,8 @@ class Restaurant extends StatelessWidget {
 
   //pop up form for each food donation , only need the information of no of pax and description
   newForm(BuildContext context) {
+
+    int count=1;
     TextEditingController paxController = TextEditingController();
     TextEditingController describeController = TextEditingController();
     TextEditingController addressController = TextEditingController();
@@ -69,8 +71,9 @@ class Restaurant extends StatelessWidget {
                actions:<Widget>[
                     ElevatedButton(
                         onPressed: () {
-                          DatabaseService().updateDatabase(paxController.text,describeController.text,addressController.text);
+                          DatabaseService().updateDatabase(count.toString(),paxController.text,describeController.text,addressController.text);
                           Navigator.of(context).pop(true);   //to close the pop up form
+                          count++;
                         },
                       autofocus: true,
                         child: Text("Submit"),

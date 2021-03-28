@@ -4,10 +4,10 @@ import 'package:flutter_app/Order.dart';
 class DatabaseService{
 
   final CollectionReference foodDonation= Firestore.instance.collection('food');
-  final CollectionReference donation= Firestore.instance.collection('donation');
+  final CollectionReference donation=  Firestore.instance.collection('donation');
+  int count=0;
 
-
-  Future updateDatabase(String pax,String description,String address) async{
+  Future updateDatabase(String id,String pax,String description,String address) async{
     foodDonation.add({
       'pax': pax,
       'description': description,
@@ -16,7 +16,25 @@ class DatabaseService{
     return;
   }
 
+  clearAllData(){
+    foodDonation.snapshots().forEach((element) {
+      for(DocumentSnapshot snapshot in element.documents){
+        snapshot.reference.delete();
+      }
+    });
+  }
+
+  deleteData(String description){
+    foodDonation.where('description', isEqualTo: description).
+    getDocuments().then((value) =>
+        value.documents.forEach((element) {
+          foodDonation.document(element.documentID).delete();
+        })
+    );
+  }
+
   Future updateDonationDatabase(String amount) async{
+    final CollectionReference donation=  await Firestore.instance.collection('donation');
     donation.add({
       'donation': donation
     });
