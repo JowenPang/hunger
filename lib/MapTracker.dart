@@ -80,160 +80,162 @@ class MapTrackerState extends State<MapTracker>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          backgroundColor: Colors.blue,
-        ),
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(widget.title),
+            backgroundColor: Colors.blue,
+          ),
 
-        body: Stack(
-            children: <Widget> [
+          body: Stack(
+              children: <Widget> [
 
-              GoogleMap(
-                onMapCreated:  _onMapCreated,
-                initialCameraPosition:  CameraPosition(
-                  target: _center,
-                  zoom: 15.0,
+                GoogleMap(
+                  onMapCreated:  _onMapCreated,
+                  initialCameraPosition:  CameraPosition(
+                    target: _center,
+                    zoom: 15.0,
+                  ),
+                  mapType: _currentMapType,
+                  markers: _markers,
+                  onCameraMove:  _onCameraMove,
                 ),
-                mapType: _currentMapType,
-                markers: _markers,
-                onCameraMove:  _onCameraMove,
-              ),
 
 
-              Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Align(
-                      alignment: Alignment.topRight,
-                      child: Column(
-                          children: <Widget> [
-                            button(_onMapTypeButtonPressed, Icons.map),
-                            SizedBox(height: 11.0),
-                            button(_onAddMarkerButtonPressed, Icons.add_location),
-                          ]
-                      )
-                  )
-              ),
-
-
-              Padding(
-                padding: EdgeInsets.only(top: 450),
-                child: Container(
-                    color: Colors.teal[700],
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget> [
-
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Align(
+                        alignment: Alignment.topRight,
+                        child: Column(
                             children: <Widget> [
-
-                              Row(
-                                children: [
-                                  Text(
-                                    'Home',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text(
-                                    'Stop 1',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text(
-                                    'Stop 2',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text(
-                                    'Est. Time',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              button(_onMapTypeButtonPressed, Icons.map),
+                              SizedBox(height: 11.0),
+                              button(_onAddMarkerButtonPressed, Icons.add_location),
                             ]
-                        ),
-
-
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget> [
-
-                              Row(
-                                children: [
-                                  Text(
-                                    'home',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text(
-                                    mapProviderAddress,
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text(
-                                    "Grace's soup kitchen",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text(
-                                    '23 mins',
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ]
-                        ),
-                      ],
+                        )
                     )
                 ),
-              )
-            ]
+
+
+                Padding(
+                  padding: EdgeInsets.only(top: 450),
+                  child: Container(
+                      color: Colors.teal[700],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget> [
+
+                          Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget> [
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Home',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Stop 1',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Stop 2',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Est. Time',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ]
+                          ),
+
+
+                          Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget> [
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      'home',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      mapProviderAddress,
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Grace's soup kitchen",
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Text(
+                                      '23 mins',
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ]
+                          ),
+                        ],
+                      )
+                  ),
+                )
+              ]
+          ),
         ),
       ),
     );

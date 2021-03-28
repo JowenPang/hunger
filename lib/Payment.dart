@@ -35,7 +35,7 @@ class _PaymentState extends State<Payment> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Verify payment'),
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.black,
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -171,6 +171,7 @@ class _PaymentState extends State<Payment> {
                   ),
                   keyboardType: TextInputType.text,
                   maxLength: 4,
+
                 ),
               ),
 
