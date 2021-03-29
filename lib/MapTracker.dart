@@ -10,9 +10,7 @@ class MapTracker extends StatefulWidget{
   final String providerAddress;
   LatLng providerLatLng;
 
-
   MapTracker({this.providerAddress, this.providerLatLng}) : super();
-
 
   @override
   MapTrackerState createState() => MapTrackerState(providerAddress, providerLatLng);
@@ -107,6 +105,7 @@ class MapTrackerState extends State<MapTracker>{
                 mapType: _currentMapType,
                 markers: _markers,
                 onCameraMove:  _onCameraMove,
+                zoomControlsEnabled: false,
               ),
 
               Positioned(
@@ -160,7 +159,7 @@ class MapTrackerState extends State<MapTracker>{
               Padding(
                 padding: EdgeInsets.only(top: 500),
                 child: Container(
-                    color: Colors.teal[700],
+                    color: Colors.teal[200].withOpacity(0.7),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget> [

@@ -5,6 +5,8 @@ import './question.dart';
 import './Restaurant.dart';
 import 'Rider.dart';
 import 'Donation.dart';
+
+
 void main(){
   runApp(
     MaterialApp(
@@ -14,6 +16,7 @@ void main(){
   //myApp is actually parent of material App so , context is actually parent of material app
   //therefore we cannot use navigator , so we now wrap MyApp inside MaterialApp
 }
+
 
 class MyApp extends StatelessWidget {
  /* @override
@@ -33,6 +36,7 @@ class MyAppState extends State<MyApp>{
     });
   }
 */
+
   @override
   Widget build(BuildContext context) {
     var questions=[
@@ -153,6 +157,5 @@ class MyAppState extends State<MyApp>{
     ,);
     //MaterialApp is a CLASS with argument
   }
-
 }
 
