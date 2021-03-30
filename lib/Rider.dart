@@ -19,9 +19,18 @@ class Rider extends StatelessWidget {
             actions: <Widget>[
               ElevatedButton(
                 child: Text("Clear all"),
-                  onPressed: () {
-                    // DatabaseService().clearAllData();
-                  }),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                    (Set<MaterialState> states) {
+                      if (states.contains(MaterialState.pressed))
+                        return Colors.white60;
+                      return Colors.green[200]; // Use the component's default.
+                    }
+                  )
+                ),
+                onPressed: () {
+                  DatabaseService().clearAllData();
+                }),
             ],
           ),
 
