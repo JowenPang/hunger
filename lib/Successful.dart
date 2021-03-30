@@ -14,7 +14,7 @@ class _SuccessfulState extends State<Successful> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Verify payment'),
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.green,
           elevation: 0,
         ),
         body: Column(
@@ -27,7 +27,7 @@ class _SuccessfulState extends State<Successful> {
             Padding(
               padding: EdgeInsets.only(top:25.0),
               child:Text(
-                'Transaction Succeessful ! ',
+                'Transaction Successful ! ',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

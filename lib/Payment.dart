@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
-import 'Sucessful.dart';
+import 'Successful.dart';
 
 class Payment extends StatefulWidget {
   @override
