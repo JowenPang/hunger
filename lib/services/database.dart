@@ -24,21 +24,13 @@ class DatabaseService{
     });
   }
 
-  deleteData(String description){
+  deleteData(String description) async{
     foodDonation.where('description', isEqualTo: description).
     getDocuments().then((value) =>
         value.documents.forEach((element) {
           foodDonation.document(element.documentID).delete();
         })
     );
-  }
-
-  Future updateDonationDatabase(String amount) async{
-    final CollectionReference donation =  await Firestore.instance.collection('donation');
-    donation.add({
-      'donation': donation
-    });
-    return;
   }
 
 

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class MapTracker extends StatefulWidget{
@@ -27,9 +25,7 @@ class MapTrackerState extends State<MapTracker>{
     _center = initCenter;
   }
 
-  // Completer<GoogleMapController> _controller = Completer();
   GoogleMapController _mapController;
-  // static LatLng _center = LatLng(5.4145728, 100.3297271);
   static LatLng _center = LatLng(5.4145728, 100.3297271);
   final Set<Marker> _markers = {};
   LatLng _lastMapPosition = _center;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/services/database.dart';
 import 'package:flutter_app/Transaction.dart';
 
 class Donation extends StatefulWidget {
@@ -141,7 +140,6 @@ class _DonationState extends State<Donation> {
                       ),
                           child: Text('Confirm amount'),
                         onPressed: () {
-                        DatabaseService().updateDonationDatabase(_amountController.text);
                         setState(() {
                           if (_amountController.text.isEmpty){
                             _validateAmount = true;
