@@ -32,11 +32,11 @@ class OrderCard extends StatelessWidget {
             color: Colors.green,
             onPressed: () {
 
-              _getProviderLatLng(order.address);
-
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context)=> MapTracker(providerAddress: order.address, providerLatLng: this.providerLatLng))
+              _getProviderLatLng(order.address).then((value) =>
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=> MapTracker(providerAddress: order.address, providerLatLng: this.providerLatLng))
+                  )
               );
             },
           ),
@@ -48,8 +48,10 @@ class OrderCard extends StatelessWidget {
   Future _getProviderLatLng(providerAddress) async {
     List<Location> locations = await locationFromAddress(providerAddress);
     print('_getProviderLatLng has run');
+    print(locations.toString());
 
     providerLatLng = LatLng(locations[0].latitude, locations[0].longitude);
+
   }
 }
 

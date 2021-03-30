@@ -20,7 +20,7 @@ class Rider extends StatelessWidget {
               ElevatedButton(
                 child: Text("Clear all"),
                   onPressed: () {
-                    DatabaseService().clearAllData();
+                    // DatabaseService().clearAllData();
                   }),
             ],
           ),

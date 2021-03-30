@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class MapTracker extends StatefulWidget{
+
   final String providerAddress;
   LatLng providerLatLng;
 
@@ -29,7 +30,7 @@ class MapTrackerState extends State<MapTracker>{
   // Completer<GoogleMapController> _controller = Completer();
   GoogleMapController _mapController;
   // static LatLng _center = LatLng(5.4145728, 100.3297271);
-  static LatLng _center;
+  static LatLng _center = LatLng(5.4145728, 100.3297271);
   final Set<Marker> _markers = {};
   LatLng _lastMapPosition = _center;
   MapType _currentMapType = MapType.normal;

@@ -34,7 +34,7 @@ class DatabaseService{
   }
 
   Future updateDonationDatabase(String amount) async{
-    final CollectionReference donation=  await Firestore.instance.collection('donation');
+    final CollectionReference donation =  await Firestore.instance.collection('donation');
     donation.add({
       'donation': donation
     });
